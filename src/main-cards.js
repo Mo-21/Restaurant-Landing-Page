@@ -50,7 +50,7 @@ export function cards(_main) {
     cards.appendChild(tab3);
 }
 
-export function footerCreation() {
+export function footerCreation(container) {
     const footer = document.createElement('footer');
     footer.classList.add('footer');
     container.appendChild(footer);

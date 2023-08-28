@@ -21,6 +21,12 @@
     };
 }
 
+@mixin screenView {
+    @media (max-width: 1000px) {
+        @content;
+    };
+}
+
 @mixin borderStyle {
     border-top: solid black 9px;
     border-bottom: solid black 9px;
@@ -58,6 +64,20 @@ ul, li{
     }
 }
 
+.nav-item {
+    --bs-nav-link-color: white;
+
+    &:hover {
+        --bs-nav-link-color: rgba(191,30,50,1);
+        transition: none;
+    }
+}
+
+.nav-link:hover {
+    --bs-nav-link-color: rgba(191,30,50,1);
+    transition: none;
+}
+
 .navbar-brand {
     color: $headings-color;
     font-size: 1.5rem;
@@ -75,19 +95,27 @@ ul, li{
 .first-row {
     color: $headings-color;
     @include gradientBG();
-    min-height: 100px;
+    min-height: 200px;
     @include borderStyle();
     max-width: 100%;
+
+    @include screenView {
+        min-height: 100px;
+    }
 }
 
 .col {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: $body-font;
     font-weight: 700;
+
+    @include screenView {
+        font-size: 1.5rem;
+    }
 }
 
 .cards {
-    min-height: 250px;
+    min-height: 400px;
     @include mobileView {
         flex-direction: column;
         margin-bottom: 5px;
@@ -96,6 +124,10 @@ ul, li{
     }
     max-width: 100%;
     align-content: space-around;
+
+    @include screenView {
+        min-height: 250px;
+    }
 }
 
 #cards-col {
@@ -107,6 +139,12 @@ ul, li{
     border-radius: 25px;
     margin: 5px;
     margin-top: 10px;
+    letter-spacing: 1px;
+    min-height: 250px;
+
+    @include screenView {
+        min-height: 150px;
+    }
 }
 
 .first-col {

@@ -1,5 +1,8 @@
-import createHeaderElement from "./initial-page-load";
 import './styles/main.scss';
-import * as bootstrap from 'bootstrap';
+import {loadSection} from './initial-page-load';
 
-createHeaderElement();
+const content = document.getElementById('content');
+
+if(content.innerHTML === '') {
+    loadSection('home');
+}
