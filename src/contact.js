@@ -11,6 +11,9 @@ export function createContainerElementContact() {
     createHeaderElement(contactContainer);
     content.appendChild(contactContainer);
 
+    contactPageCards();
+    cards(contactContainer);
+    footerCreation(contactContainer);
     
     //listening to the navbar links
     const linksListener = document.querySelectorAll('a');
@@ -30,6 +33,43 @@ export function createContainerElementContact() {
         loadSection(targetID);
     };
 }));
+}
+
+
+function contactPageCards() {
+    const rowContainer = document.createElement('div');
+    rowContainer.id ='rowContainer';
+    rowContainer.classList.add('container');
+    contactContainer.appendChild(rowContainer);
+
+    const contactRow1 = document.createElement('div');
+    contactRow1.classList.add('row');
+    contactRow1.id = 'contactRow1';
+    rowContainer.appendChild(contactRow1);
+
+    const contactRow2 = document.createElement('div');
+    contactRow2.classList.add('row');
+    contactRow2.classList.add('position-relative');
+    contactRow2.classList.add('justify-content-center');
+    contactRow2.classList.add('align-items-center');
+    contactRow2.id = 'contactRow2';
+    rowContainer.appendChild(contactRow2);
+
+    const card1 = document.createElement('div');
+    const card2 = document.createElement('div');
+
+    card1.id = 'card1';
+    card2.id = 'card2';
+    contactRow1.appendChild(card1);
+    contactRow2.appendChild(card2);
+
+    card1.classList.add('col');
+
+    card2.classList.add('col');
+    card2.classList.add('position-absolute');
+
+    card1.innerHTML = 'We\'re delighted that you\'re interested in reaching out to us at Monsho. Whether you have questions, feedback, or want to make a reservation, our team is here to assist you. Here\'s how you can get in touch:<br><br>Facebook: @MonshoRestaurant<br>Instagram: @monsho.restaurant<br>Twitter: @MonshoDining<br><br>Reservation Information:<br><br>You can book a table through our website, phone, or email.<br><br>';
+    card2.textContent = 'Monsho Restaurant';
 }
 
 function loadSection(sectionID) {

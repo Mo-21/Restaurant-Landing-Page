@@ -1,4 +1,10 @@
-export function cards(_main) {
+export function cards(container) {
+    
+    const _main = document.createElement('main');
+    _main.classList.add('main-para');
+    _main.classList.add('text-center');
+    container.appendChild(_main);
+        
     //container row
     const cards = document.createElement('div');
     cards.classList.add('row');

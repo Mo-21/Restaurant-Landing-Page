@@ -21,8 +21,20 @@
     };
 }
 
-@mixin screenView {
+@mixin mobileView1000 {
     @media (max-width: 1000px) {
+        @content;
+    };
+}
+
+@mixin mobileViewCards {
+    @media (max-width: 500px) {
+        @content;
+    };
+}
+
+@mixin screenView {
+    @media (max-width: 800px) {
         @content;
     };
 }
@@ -95,7 +107,7 @@ ul, li{
 .first-row {
     color: $headings-color;
     @include gradientBG();
-    min-height: 200px;
+    min-height: 150px;
     @include borderStyle();
     max-width: 100%;
 
@@ -115,7 +127,7 @@ ul, li{
 }
 
 .cards {
-    min-height: 400px;
+    min-height: 350px;
     @include mobileView {
         flex-direction: column;
         margin-bottom: 5px;
@@ -124,10 +136,6 @@ ul, li{
     }
     max-width: 100%;
     align-content: space-around;
-
-    @include screenView {
-        min-height: 250px;
-    }
 }
 
 #cards-col {
@@ -140,11 +148,7 @@ ul, li{
     margin: 5px;
     margin-top: 10px;
     letter-spacing: 1px;
-    min-height: 250px;
-
-    @include screenView {
-        min-height: 150px;
-    }
+    min-height: 150px;
 }
 
 .first-col {
@@ -164,3 +168,40 @@ ul, li{
 .footer p {
     margin: 0;
   }
+
+#rowContainer {
+    min-height: 500px;
+    width: 100%;
+    background: linear-gradient(-45deg, yellow, greenyellow);
+    margin-top: 50px;
+    border-radius: 40px;
+}
+
+#card1, #card2 {
+    border-radius: 25px;
+    text-align: justify;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#card1 {
+    margin-top: 40px;
+    line-break: auto;
+    word-spacing: 2px;
+    @include mobileViewCards {
+        margin-top: 10px;
+    }
+}
+
+#card2 {
+    text-align: center;
+    margin-top: 50px;
+    letter-spacing: 4px;
+    background-color: rgb(0, 0, 0);
+    max-width: 650px;
+    font-family: $headings-font;
+    color: white;
+    @include mobileViewCards {
+        margin-top: 5px;
+    }
+}
