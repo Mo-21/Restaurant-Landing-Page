@@ -1,6 +1,7 @@
 import {createHeaderElement} from './navbar';
 import { cards, footerCreation } from './main-cards';
 import {createContainerElement} from "./initial-page-load";
+import {createContainerElementMenu} from "./menu-page";
 
 const content = document.getElementById('content');
 const contactContainer = document.createElement('div');
@@ -80,7 +81,7 @@ function loadSection(sectionID) {
     } else if(sectionID === 'menu') {
         contactContainer.innerHTML = '';
         content.innerHTML = '';
-        createContainerElementContact();
+        createContainerElementMenu();
     } else if(sectionID === 'contact') {
         contactContainer.innerHTML = '';
         content.innerHTML = '';

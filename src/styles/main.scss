@@ -205,3 +205,32 @@ ul, li{
         margin-top: 5px;
     }
 }
+
+.row-cols-1 {
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    #menu-col {
+        max-width: 400px;
+        .card {
+            .card-body {
+                @include darkBG();
+                .card-title {
+                    color: white;
+                }
+                .card-text{
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    margin-top: 20px;
+                }
+            }
+            #menu-img {
+                max-height: 400px;
+                max-width: 100%;
+            }
+        }
+    } 
+}
+
+
+

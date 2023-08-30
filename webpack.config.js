@@ -52,6 +52,18 @@ module.exports = {
                 filename: 'assets/fonts/[name][ext]', // Subfolder in dist
               },      
             },
+            {
+              test: /\.webp$/,
+              type: 'asset/resource',
+              use: [
+                {
+                  loader: 'file-loader',
+                },  
+              ],
+              generator: {
+                filename: 'assets/images/[name][ext]', // Subfolder in dist
+              },    
+            },
         ],
     },
         devtool: 'source-map',

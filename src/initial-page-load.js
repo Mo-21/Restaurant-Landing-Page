@@ -3,6 +3,7 @@ import slider from './assets/restaurant-front.jpg';
 import { cards, footerCreation } from './main-cards';
 import {createHeaderElement} from './navbar';
 import {createContainerElementContact} from './contact';
+import {createContainerElementMenu} from "./menu-page";
 
 const content = document.getElementById('content');
 const container = document.createElement('div');
@@ -80,7 +81,7 @@ export function loadSection(sectionID) {
     } else if(sectionID === 'menu') {
         container.innerHTML = '';
         content.innerHTML = '';
-        createContainerElementContact();
+        createContainerElementMenu();
     } else if(sectionID === 'contact') {
         container.innerHTML = '';
         content.innerHTML = '';
